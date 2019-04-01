@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoodEgg" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatKindOfEgg" translatesAutoresizingMaskIntoConstraints="NO" id="JAI-Sg-jMK">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShakeAndSee" translatesAutoresizingMaskIntoConstraints="NO" id="WzM-bB-gck">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WzM-bB-gck" secondAttribute="bottom" id="Bn2-uE-BYD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JAI-Sg-jMK" secondAttribute="bottom" id="RA2-VC-GKk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WzM-bB-gck" secondAttribute="trailing" id="bdm-Dd-wrg"/>
+                            <constraint firstItem="WzM-bB-gck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bwa-cl-WFv"/>
+                            <constraint firstItem="WzM-bB-gck" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cLT-Ez-bed"/>
+                            <constraint firstItem="JAI-Sg-jMK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fzY-eS-ohn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JAI-Sg-jMK" secondAttribute="trailing" id="pXl-wY-0Zh"/>
+                            <constraint firstItem="JAI-Sg-jMK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sCe-Hb-wgO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ShakeAndSee" width="612" height="792"/>
+        <image name="WhatKindOfEgg" width="612" height="792"/>
+    </resources>
+</document>

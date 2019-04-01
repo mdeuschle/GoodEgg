@@ -97,11 +97,10 @@
 		A82421E82251A684000B573F /* GoodEgg */ = {
 			isa = PBXGroup;
 			children = (
-				A82421E92251A684000B573F /* AppDelegate.swift */,
-				A82421EB2251A684000B573F /* ViewController.swift */,
-				A82421ED2251A684000B573F /* Main.storyboard */,
-				A82421F02251A68A000B573F /* Assets.xcassets */,
-				A82421F22251A68A000B573F /* LaunchScreen.storyboard */,
+				A824221A2251A775000B573F /* Support Files */,
+				A82422192251A753000B573F /* Model */,
+				A82422182251A74B000B573F /* View */,
+				A82422172251A743000B573F /* Controller */,
 				A82421F52251A68A000B573F /* Info.plist */,
 			);
 			path = GoodEgg;
@@ -123,6 +122,39 @@
 				A824220B2251A68B000B573F /* Info.plist */,
 			);
 			path = GoodEggUITests;
+			sourceTree = "<group>";
+		};
+		A82422172251A743000B573F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A82421EB2251A684000B573F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A82422182251A74B000B573F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A82421ED2251A684000B573F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A82422192251A753000B573F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A824221A2251A775000B573F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A82421E92251A684000B573F /* AppDelegate.swift */,
+				A82421F02251A68A000B573F /* Assets.xcassets */,
+				A82421F22251A68A000B573F /* LaunchScreen.storyboard */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
