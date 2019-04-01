@@ -14,6 +14,7 @@
 		A82421F42251A68A000B573F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82421F22251A68A000B573F /* LaunchScreen.storyboard */; };
 		A82421FF2251A68B000B573F /* GoodEggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82421FE2251A68B000B573F /* GoodEggTests.swift */; };
 		A824220A2251A68B000B573F /* GoodEggUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82422092251A68B000B573F /* GoodEggUITests.swift */; };
+		A827F4D82251C3D000ABCA65 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = A827F4D72251C3CF00ABCA65 /* Egg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A82422052251A68B000B573F /* GoodEggUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodEggUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82422092251A68B000B573F /* GoodEggUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEggUITests.swift; sourceTree = "<group>"; };
 		A824220B2251A68B000B573F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A827F4D72251C3CF00ABCA65 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		A82422192251A753000B573F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A827F4D72251C3CF00ABCA65 /* Egg.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A827F4D82251C3D000ABCA65 /* Egg.swift in Sources */,
 				A82421EC2251A684000B573F /* ViewController.swift in Sources */,
 				A82421EA2251A684000B573F /* AppDelegate.swift in Sources */,
 			);

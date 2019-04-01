@@ -9,11 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var eggImageView: UIImageView!
+    @IBOutlet var shakeToSeeImageView: UIImageView!
+    @IBOutlet var checkAgainButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 
 }
 
