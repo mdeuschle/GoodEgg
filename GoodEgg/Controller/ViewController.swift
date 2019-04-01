@@ -14,10 +14,16 @@ class ViewController: UIViewController {
     @IBOutlet var shakeToSeeImageView: UIImageView!
     @IBOutlet var checkAgainButton: UIButton!
     
-    private var egg: Egg?
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        shakeToSeeImageView.isHidden = true
+        checkAgainButton.addTarget(self,
+                                   action: #selector(checkAgainButtonTapped),
+                                   for: .touchUpInside)
+    }
+    
+    @objc private func checkAgainButtonTapped() {
+        eggImageView.image = Egg.getRadomImage()
     }
 }
 

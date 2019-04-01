@@ -9,13 +9,12 @@
 import UIKit
 
 struct Egg {
-    let image: UIImage
-    func getRadomEgg() -> Egg? {
+    static func getRadomImage() -> UIImage? {
         let randomNumber = arc4random_uniform(16)
         guard let randomImage = UIImage(named: String(randomNumber)) else {
             return nil
         }
-        return Egg(image: randomImage)
+        return randomImage
     }
 }
 
