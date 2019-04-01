@@ -13,10 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet var eggImageView: UIImageView!
     @IBOutlet var shakeToSeeImageView: UIImageView!
     @IBOutlet var checkAgainButton: UIButton!
+    
+    private var egg: Egg?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
 
