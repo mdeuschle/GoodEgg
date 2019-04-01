@@ -16,14 +16,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shakeToSeeImageView.isHidden = true
         checkAgainButton.addTarget(self,
                                    action: #selector(checkAgainButtonTapped),
                                    for: .touchUpInside)
+        resetGame()
+        eggImageView.image = Egg.getRadomImage()
+        eggImageView.alpha = 0
     }
     
     @objc private func checkAgainButtonTapped() {
-        eggImageView.image = Egg.getRadomImage()
+        eggImageView.fadeIn() { _ in
+            print("FADED IN")
+        }
+    }
+    
+    private func resetGame() {
+        shakeToSeeImageView.isHidden = true
+//        checkAgainButton.isHidden = true
     }
 }
 
