@@ -15,7 +15,8 @@
 		A82421FF2251A68B000B573F /* GoodEggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82421FE2251A68B000B573F /* GoodEggTests.swift */; };
 		A824220A2251A68B000B573F /* GoodEggUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82422092251A68B000B573F /* GoodEggUITests.swift */; };
 		A827F4D82251C3D000ABCA65 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = A827F4D72251C3CF00ABCA65 /* Egg.swift */; };
-		A8DF2B932251D74A008D01AB /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF2B922251D74A008D01AB /* UIViewExtension.swift */; };
+		A8DF2B9922570F7D008D01AB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF2B9822570F7D008D01AB /* UIImageViewExtension.swift */; };
+		A8DF2B9B225719C2008D01AB /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF2B9A225719C2008D01AB /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 		A82422092251A68B000B573F /* GoodEggUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodEggUITests.swift; sourceTree = "<group>"; };
 		A824220B2251A68B000B573F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A827F4D72251C3CF00ABCA65 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
-		A8DF2B922251D74A008D01AB /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A8DF2B9822570F7D008D01AB /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		A8DF2B9A225719C2008D01AB /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				A827F4D72251C3CF00ABCA65 /* Egg.swift */,
-				A8DF2B922251D74A008D01AB /* UIViewExtension.swift */,
+				A8DF2B9822570F7D008D01AB /* UIImageViewExtension.swift */,
+				A8DF2B9A225719C2008D01AB /* UIButtonExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,8 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A827F4D82251C3D000ABCA65 /* Egg.swift in Sources */,
+				A8DF2B9B225719C2008D01AB /* UIButtonExtension.swift in Sources */,
+				A8DF2B9922570F7D008D01AB /* UIImageViewExtension.swift in Sources */,
 				A82421EC2251A684000B573F /* ViewController.swift in Sources */,
-				A8DF2B932251D74A008D01AB /* UIViewExtension.swift in Sources */,
 				A82421EA2251A684000B573F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

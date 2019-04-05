@@ -20,19 +20,31 @@ class ViewController: UIViewController {
                                    action: #selector(checkAgainButtonTapped),
                                    for: .touchUpInside)
         resetGame()
-        eggImageView.image = Egg.getRadomImage()
-        eggImageView.alpha = 0
     }
     
     @objc private func checkAgainButtonTapped() {
-        eggImageView.fadeIn() { _ in
-            print("FADED IN")
-        }
+        resetGame()
     }
     
     private func resetGame() {
-        shakeToSeeImageView.isHidden = true
-//        checkAgainButton.isHidden = true
+        checkAgainButton.alpha = 0
+        checkAgainButton.isEnabled = false
+        eggImageView.alpha = 0
+        eggImageView.image = #imageLiteral(resourceName: "WhatKindOfEgg")
+        shakeToSeeImageView.alpha = 0
+        eggImageView.fadeIn { _ in
+            self.shakeToSeeImageView.fadeIn { _ in }
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            self.shakeToSeeImageView.alpha = 0
+            eggImageView.image = Egg.getRadomImage()
+            checkAgainButton.fadeIn { _ in
+                self.checkAgainButton.isEnabled = true
+            }
+        }
     }
 }
 
