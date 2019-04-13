@@ -17,6 +17,11 @@
 		A827F4D82251C3D000ABCA65 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = A827F4D72251C3CF00ABCA65 /* Egg.swift */; };
 		A8DF2B9922570F7D008D01AB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF2B9822570F7D008D01AB /* UIImageViewExtension.swift */; };
 		A8DF2B9B225719C2008D01AB /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF2B9A225719C2008D01AB /* UIButtonExtension.swift */; };
+		A8DF2C1C22626DA3008D01AB /* LoadMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C1B22626DA2008D01AB /* LoadMusic.mp3 */; };
+		A8DF2C1E22626F88008D01AB /* Oops.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C1D22626F88008D01AB /* Oops.mp3 */; };
+		A8DF2C2022626F96008D01AB /* Fart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C1F22626F95008D01AB /* Fart.mp3 */; };
+		A8DF2C2222626FA6008D01AB /* Reveal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C2122626FA6008D01AB /* Reveal.mp3 */; };
+		A8DF2C2422626FB6008D01AB /* Shake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C2322626FB6008D01AB /* Shake.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		A827F4D72251C3CF00ABCA65 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
 		A8DF2B9822570F7D008D01AB /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		A8DF2B9A225719C2008D01AB /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		A8DF2C1B22626DA2008D01AB /* LoadMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LoadMusic.mp3; sourceTree = "<group>"; };
+		A8DF2C1D22626F88008D01AB /* Oops.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Oops.mp3; sourceTree = "<group>"; };
+		A8DF2C1F22626F95008D01AB /* Fart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fart.mp3; sourceTree = "<group>"; };
+		A8DF2C2122626FA6008D01AB /* Reveal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Reveal.mp3; sourceTree = "<group>"; };
+		A8DF2C2322626FB6008D01AB /* Shake.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Shake.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,7 @@
 		A82421E82251A684000B573F /* GoodEgg */ = {
 			isa = PBXGroup;
 			children = (
+				A8DF2C1A22626D7C008D01AB /* Audio Assets */,
 				A824221A2251A775000B573F /* Support Files */,
 				A82422192251A753000B573F /* Model */,
 				A82422182251A74B000B573F /* View */,
@@ -164,6 +175,18 @@
 				A82421F22251A68A000B573F /* LaunchScreen.storyboard */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		A8DF2C1A22626D7C008D01AB /* Audio Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A8DF2C2322626FB6008D01AB /* Shake.mp3 */,
+				A8DF2C1D22626F88008D01AB /* Oops.mp3 */,
+				A8DF2C1B22626DA2008D01AB /* LoadMusic.mp3 */,
+				A8DF2C1F22626F95008D01AB /* Fart.mp3 */,
+				A8DF2C2122626FA6008D01AB /* Reveal.mp3 */,
+			);
+			path = "Audio Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +293,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DF2C1C22626DA3008D01AB /* LoadMusic.mp3 in Resources */,
 				A82421F42251A68A000B573F /* LaunchScreen.storyboard in Resources */,
+				A8DF2C1E22626F88008D01AB /* Oops.mp3 in Resources */,
+				A8DF2C2422626FB6008D01AB /* Shake.mp3 in Resources */,
+				A8DF2C2022626F96008D01AB /* Fart.mp3 in Resources */,
 				A82421F12251A68A000B573F /* Assets.xcassets in Resources */,
+				A8DF2C2222626FA6008D01AB /* Reveal.mp3 in Resources */,
 				A82421EF2251A684000B573F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
