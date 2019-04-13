@@ -10,7 +10,7 @@ import UIKit
 
 struct Egg {
     static func getRadomImage() -> UIImage? {
-        let randomNumber = Int.random(in: 0...15)
+        let randomNumber = Int.random(in: 0...21)
         guard let randomImage = UIImage(named: String(randomNumber)) else {
             return nil
         }
