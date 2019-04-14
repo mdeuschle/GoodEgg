@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import AVFoundation
+import AudioToolbox
 
 class ViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var shakeToSeeImageView: UIImageView!
     @IBOutlet var goodEggWorldView: UIImageView!
     @IBOutlet var checkAgainButton: UIButton!
+    
     private var isShakeReady = false
     private var isShaking = false
     private var timer: Timer!
@@ -108,6 +110,7 @@ class ViewController: UIViewController {
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake, isShakeReady {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             isShakeReady = false
             shakeToSeeImageView.alpha = 0
             eggImageView.image = #imageLiteral(resourceName: "BlankEgg")
@@ -142,6 +145,7 @@ class ViewController: UIViewController {
 extension ViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if isShaking {
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             player.play()
         }
     }

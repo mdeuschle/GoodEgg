@@ -27,7 +27,7 @@ extension UIImageView {
     func shake() {
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.07
-        animation.repeatCount = Float.random(in: 10..<30)
+        animation.repeatCount = Float.random(in: 10..<40)
         animation.autoreverses = true
         animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 21,
                                                        y: self.center.y))
@@ -46,8 +46,8 @@ extension UIImageView {
                 planetImages.append(image)
             }
             self.animationImages = planetImages
-            self.animationDuration = 1.0
-            self.animationRepeatCount = 3
+            self.animationDuration = 0.9
+            self.animationRepeatCount = 4
             self.startAnimating()
     }
 }
