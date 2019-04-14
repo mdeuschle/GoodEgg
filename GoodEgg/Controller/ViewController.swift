@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -16,18 +17,48 @@ class ViewController: UIViewController {
     @IBOutlet var goodEggWorldView: UIImageView!
     @IBOutlet var checkAgainButton: UIButton!
     private var isShakeReady = false
+    private var timer: Timer!
+    private var musicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureCheckAgainButton()
-//        resetGame()
+        configureCheckAgainButton()
         goodEggWorldView.rotatePlanetImage()
+        goodEggMusic()
+        startTimer()
+    }
+    
+    private func goodEggMusic() {
+        guard let resourcePath = Bundle.main.path(forResource: "LoadMusic",
+                                                  ofType: "mp3") else {
+                                                    return
+        }
+        let url = URL(fileURLWithPath: resourcePath)
+        try? musicPlayer = AVAudioPlayer(contentsOf: url)
+        musicPlayer.prepareToPlay()
+        musicPlayer.play()
+    }
+    
+    private func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0,
+                                     repeats: false,
+                                     block: { [weak self] _ in
+                                        self?.goodEggWorldView.isHidden = true
+                                        self?.musicPlayer.stop()
+                                        self?.resetGame()
+        })
     }
     
     private func configureCheckAgainButton() {
+        checkAgainButton.alpha = 0
+        checkAgainButton.isEnabled = false
         checkAgainButton.addTarget(self,
                                    action: #selector(checkAgainButtonTapped),
                                    for: .touchUpInside)
+    }
+    
+    @objc private func launchGoodEggWorld() {
+        goodEggWorldView.rotatePlanetImage()
     }
     
     @objc private func checkAgainButtonTapped() {

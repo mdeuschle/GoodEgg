@@ -11,11 +11,13 @@ import UIKit
 typealias completion = ((Bool) -> Void)?
 
 extension UIImageView {
+    
     func fadeIn(completion: completion) {
         UIImageView.animate(withDuration: 0.4, animations: {
             self.alpha = 1.0
         }, completion: completion)
     }
+    
     func fadeOut(completion: completion) {
         UIImageView.animate(withDuration: 0.3, animations: {
             self.alpha = 0.0
@@ -35,18 +37,18 @@ extension UIImageView {
     }
     
     func rotatePlanetImage() {
-        let loadScreen = "LoadScreen"
-        self.image = UIImage(named: loadScreen + "1")
-        self.animationImages = nil
-        var planetImages = [UIImage]()
-        for number in 1...4 {
-            guard let image = UIImage(named: loadScreen + String(number)) else { return }
-            planetImages.append(image)
-        }
-        self.animationImages = planetImages
-        self.animationDuration = 1.0
-        self.animationRepeatCount = 5
-        self.startAnimating()
+            let loadScreen = "LoadScreen"
+            self.image = UIImage(named: loadScreen + "1")
+            self.animationImages = nil
+            var planetImages = [UIImage]()
+            for number in 1...4 {
+                guard let image = UIImage(named: loadScreen + String(number)) else { return }
+                planetImages.append(image)
+            }
+            self.animationImages = planetImages
+            self.animationDuration = 1.0
+            self.animationRepeatCount = 3
+            self.startAnimating()
     }
 }
 
