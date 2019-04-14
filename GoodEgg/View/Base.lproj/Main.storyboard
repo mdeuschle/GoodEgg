@@ -18,11 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatKindOfEgg" translatesAutoresizingMaskIntoConstraints="NO" id="JAI-Sg-jMK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JAI-Sg-jMK">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WzM-bB-gck">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShakeAndSee" translatesAutoresizingMaskIntoConstraints="NO" id="WzM-bB-gck">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadScreen1" translatesAutoresizingMaskIntoConstraints="NO" id="XTI-1p-eBt">
+                                <rect key="frame" x="40" y="44" width="311.00000000000011" height="565"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp8-d9-Sro">
                                 <rect key="frame" x="0.0" y="545" width="117.5" height="152"/>
@@ -35,8 +38,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XTI-1p-eBt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="Akc-to-mX3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WzM-bB-gck" secondAttribute="bottom" id="Bn2-uE-BYD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JAI-Sg-jMK" secondAttribute="bottom" id="RA2-VC-GKk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XTI-1p-eBt" secondAttribute="trailing" constant="24" id="Rce-nz-7oO"/>
+                            <constraint firstItem="XTI-1p-eBt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Sgx-aw-iY1"/>
                             <constraint firstItem="zp8-d9-Sro" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U6e-fc-E40"/>
                             <constraint firstItem="zp8-d9-Sro" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="30" id="YfN-C5-4xt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WzM-bB-gck" secondAttribute="trailing" id="bdm-Dd-wrg"/>
@@ -45,6 +51,7 @@
                             <constraint firstItem="JAI-Sg-jMK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fzY-eS-ohn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zp8-d9-Sro" secondAttribute="trailing" symbolic="YES" id="jZB-Vd-IGE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JAI-Sg-jMK" secondAttribute="trailing" id="pXl-wY-0Zh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XTI-1p-eBt" secondAttribute="bottom" constant="58" id="qWG-nb-77g"/>
                             <constraint firstItem="JAI-Sg-jMK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sCe-Hb-wgO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -52,16 +59,18 @@
                     <connections>
                         <outlet property="checkAgainButton" destination="zp8-d9-Sro" id="yln-2V-0sf"/>
                         <outlet property="eggImageView" destination="JAI-Sg-jMK" id="GaZ-Ay-TE6"/>
+                        <outlet property="goodEggWorldView" destination="XTI-1p-eBt" id="gL4-ne-fG9"/>
                         <outlet property="shakeToSeeImageView" destination="WzM-bB-gck" id="mBb-SI-hbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="127.17391304347827"/>
+            <point key="canvasLocation" x="136.80000000000001" y="126.38680659670166"/>
         </scene>
     </scenes>
     <resources>
         <image name="Check Again" width="612" height="792"/>
-        <image name="WhatKindOfEgg" width="612" height="792"/>
+        <image name="LoadScreen1" width="491" height="522"/>
+        <image name="ShakeAndSee" width="612" height="792"/>
     </resources>
 </document>

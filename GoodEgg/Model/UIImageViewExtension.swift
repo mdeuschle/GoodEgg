@@ -22,7 +22,7 @@ extension UIImageView {
         }, completion: completion)
     }
     
-    func shake(){
+    func shake() {
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.07
         animation.repeatCount = Float.random(in: 10..<30)
@@ -32,6 +32,21 @@ extension UIImageView {
         animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 18,
                                                      y: self.center.y))
         self.layer.add(animation, forKey: "position")
+    }
+    
+    func rotatePlanetImage() {
+        let loadScreen = "LoadScreen"
+        self.image = UIImage(named: loadScreen + "1")
+        self.animationImages = nil
+        var planetImages = [UIImage]()
+        for number in 1...4 {
+            guard let image = UIImage(named: loadScreen + String(number)) else { return }
+            planetImages.append(image)
+        }
+        self.animationImages = planetImages
+        self.animationDuration = 1.0
+        self.animationRepeatCount = 5
+        self.startAnimating()
     }
 }
 

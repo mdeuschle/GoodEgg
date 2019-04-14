@@ -13,13 +13,15 @@ class ViewController: UIViewController {
     
     @IBOutlet var eggImageView: UIImageView!
     @IBOutlet var shakeToSeeImageView: UIImageView!
+    @IBOutlet var goodEggWorldView: UIImageView!
     @IBOutlet var checkAgainButton: UIButton!
     private var isShakeReady = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCheckAgainButton()
-        resetGame()
+//        configureCheckAgainButton()
+//        resetGame()
+        goodEggWorldView.rotatePlanetImage()
     }
     
     private func configureCheckAgainButton() {
