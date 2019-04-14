@@ -17,29 +17,53 @@ class ViewController: UIViewController {
     @IBOutlet var goodEggWorldView: UIImageView!
     @IBOutlet var checkAgainButton: UIButton!
     private var isShakeReady = false
+    private var isShaking = false
     private var timer: Timer!
     private var musicPlayer: AVAudioPlayer!
+    private var shakePlayer: AVAudioPlayer!
+    private var revealPlayer: AVAudioPlayer!
+    private var fartPlayer: AVAudioPlayer!
+    private var oopsPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCheckAgainButton()
+        setupAudioPlayers()
         goodEggWorldView.rotatePlanetImage()
-        goodEggMusic()
         startTimer()
     }
     
-    private func goodEggMusic() {
-        guard let resourcePath = Bundle.main.path(forResource: "LoadMusic",
-                                                  ofType: "mp3") else {
-                                                    return
-        }
-        let url = URL(fileURLWithPath: resourcePath)
-        try? musicPlayer = AVAudioPlayer(contentsOf: url)
+    private func setupAudioPlayers() {
+        guard let musicPath = Bundle.main.path(forResource: "LoadMusic",
+                                               ofType: "mp3"),
+            let shakePath = Bundle.main.path(forResource: "Shake",
+                                             ofType: "mp3"),
+            let fartPath = Bundle.main.path(forResource: "Fart",
+                                            ofType: "mp3"),
+            let oopsPath = Bundle.main.path(forResource: "Oops",
+                                            ofType: "mp3"),
+            let revealPath = Bundle.main.path(forResource: "Reveal",
+                                              ofType: "mp3") else { return }
+        let musicURL = URL(fileURLWithPath: musicPath)
+        try? musicPlayer = AVAudioPlayer(contentsOf: musicURL)
+        let shakeURL = URL(fileURLWithPath: shakePath)
+        try? shakePlayer = AVAudioPlayer(contentsOf: shakeURL)
+        let fartURL = URL(fileURLWithPath: fartPath)
+        try? fartPlayer = AVAudioPlayer(contentsOf: fartURL)
+        let oopsURL = URL(fileURLWithPath: oopsPath)
+        try? oopsPlayer = AVAudioPlayer(contentsOf: oopsURL)
+        let revealURL = URL(fileURLWithPath: revealPath)
+        try? revealPlayer = AVAudioPlayer(contentsOf: revealURL)
         musicPlayer.prepareToPlay()
-        musicPlayer.play()
+        shakePlayer.prepareToPlay()
+        fartPlayer.prepareToPlay()
+        oopsPlayer.prepareToPlay()
+        revealPlayer.prepareToPlay()
+        shakePlayer.delegate = self
     }
     
     private func startTimer() {
+        musicPlayer.play()
         timer = Timer.scheduledTimer(withTimeInterval: 5.0,
                                      repeats: false,
                                      block: { [weak self] _ in
@@ -55,10 +79,6 @@ class ViewController: UIViewController {
         checkAgainButton.addTarget(self,
                                    action: #selector(checkAgainButtonTapped),
                                    for: .touchUpInside)
-    }
-    
-    @objc private func launchGoodEggWorld() {
-        goodEggWorldView.rotatePlanetImage()
     }
     
     @objc private func checkAgainButtonTapped() {
@@ -91,10 +111,23 @@ class ViewController: UIViewController {
             isShakeReady = false
             shakeToSeeImageView.alpha = 0
             eggImageView.image = #imageLiteral(resourceName: "BlankEgg")
+            self.isShaking = true
+            self.shakePlayer.play()
             CATransaction.begin()
             CATransaction.setCompletionBlock {
+                self.isShaking = false
+                self.shakePlayer.stop()
                 self.eggImageView.fadeIn(completion: { [weak self] _ in
-                    self?.eggImageView.image = Egg.getRadomImage()
+                    let randomNumber = Int.random(in: 0...21)
+                    switch randomNumber {
+                    case 17:
+                        self?.oopsPlayer.play()
+                    case 19:
+                        self?.fartPlayer.play()
+                    default:
+                        self?.revealPlayer.play()
+                    }
+                    self?.eggImageView.image = Egg.getRadomImage(from: randomNumber)
                     self?.checkAgainButton.fadeIn { [weak self] _ in
                         self?.checkAgainButton.isEnabled = true
                     }
@@ -102,6 +135,14 @@ class ViewController: UIViewController {
             }
             eggImageView.shake()
             CATransaction.commit()
+        }
+    }
+}
+
+extension ViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if isShaking {
+            player.play()
         }
     }
 }
