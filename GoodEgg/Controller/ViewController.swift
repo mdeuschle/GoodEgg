@@ -36,31 +36,11 @@ class ViewController: UIViewController {
     }
     
     private func setupAudioPlayers() {
-        guard let musicPath = Bundle.main.path(forResource: "LoadMusic",
-                                               ofType: "mp3"),
-            let shakePath = Bundle.main.path(forResource: "Shake",
-                                             ofType: "mp3"),
-            let fartPath = Bundle.main.path(forResource: "Fart",
-                                            ofType: "mp3"),
-            let oopsPath = Bundle.main.path(forResource: "Oops",
-                                            ofType: "mp3"),
-            let revealPath = Bundle.main.path(forResource: "Reveal",
-                                              ofType: "mp3") else { return }
-        let musicURL = URL(fileURLWithPath: musicPath)
-        try? musicPlayer = AVAudioPlayer(contentsOf: musicURL)
-        let shakeURL = URL(fileURLWithPath: shakePath)
-        try? shakePlayer = AVAudioPlayer(contentsOf: shakeURL)
-        let fartURL = URL(fileURLWithPath: fartPath)
-        try? fartPlayer = AVAudioPlayer(contentsOf: fartURL)
-        let oopsURL = URL(fileURLWithPath: oopsPath)
-        try? oopsPlayer = AVAudioPlayer(contentsOf: oopsURL)
-        let revealURL = URL(fileURLWithPath: revealPath)
-        try? revealPlayer = AVAudioPlayer(contentsOf: revealURL)
-        musicPlayer.prepareToPlay()
-        shakePlayer.prepareToPlay()
-        fartPlayer.prepareToPlay()
-        oopsPlayer.prepareToPlay()
-        revealPlayer.prepareToPlay()
+        try? musicPlayer = AVAudioPlayer(contentsOf: Audio.shared.getURL(for: .music)!)
+        try? shakePlayer = AVAudioPlayer(contentsOf: Audio.shared.getURL(for: .shake)!)
+        try? fartPlayer = AVAudioPlayer(contentsOf: Audio.shared.getURL(for: .fart)!)
+        try? oopsPlayer = AVAudioPlayer(contentsOf: Audio.shared.getURL(for: .oops)!)
+        try? revealPlayer = AVAudioPlayer(contentsOf: Audio.shared.getURL(for: .reveal)!)
         shakePlayer.delegate = self
     }
     
@@ -115,7 +95,8 @@ class ViewController: UIViewController {
             shakeToSeeImageView.alpha = 0
             eggImageView.image = #imageLiteral(resourceName: "BlankEgg")
             self.isShaking = true
-            self.shakePlayer.play()
+            shakePlayer.delegate = self
+            shakePlayer.play()
             CATransaction.begin()
             CATransaction.setCompletionBlock {
                 self.isShaking = false

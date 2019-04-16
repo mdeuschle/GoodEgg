@@ -22,6 +22,7 @@
 		A8DF2C2022626F96008D01AB /* Fart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C1F22626F95008D01AB /* Fart.mp3 */; };
 		A8DF2C2222626FA6008D01AB /* Reveal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C2122626FA6008D01AB /* Reveal.mp3 */; };
 		A8DF2C2422626FB6008D01AB /* Shake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A8DF2C2322626FB6008D01AB /* Shake.mp3 */; };
+		A8DF2C2A2263829F008D01AB /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DF2C292263829F008D01AB /* Audio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A8DF2C1F22626F95008D01AB /* Fart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fart.mp3; sourceTree = "<group>"; };
 		A8DF2C2122626FA6008D01AB /* Reveal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Reveal.mp3; sourceTree = "<group>"; };
 		A8DF2C2322626FB6008D01AB /* Shake.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Shake.mp3; sourceTree = "<group>"; };
+		A8DF2C292263829F008D01AB /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				A827F4D72251C3CF00ABCA65 /* Egg.swift */,
 				A8DF2B9822570F7D008D01AB /* UIImageViewExtension.swift */,
 				A8DF2B9A225719C2008D01AB /* UIButtonExtension.swift */,
+				A8DF2C292263829F008D01AB /* Audio.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				A8DF2B9922570F7D008D01AB /* UIImageViewExtension.swift in Sources */,
 				A82421EC2251A684000B573F /* ViewController.swift in Sources */,
 				A82421EA2251A684000B573F /* AppDelegate.swift in Sources */,
+				A8DF2C2A2263829F008D01AB /* Audio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DKZWJ5854;
 				INFOPLIST_FILE = GoodEgg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,6 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DKZWJ5854;
 				INFOPLIST_FILE = GoodEgg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
