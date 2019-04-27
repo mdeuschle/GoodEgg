@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     func fadeIn(completion: completion) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: {
             UIButton.animate(withDuration: 0.1, animations: {
                 self.alpha = 1.0
             }, completion: completion)
