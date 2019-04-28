@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 import AVFoundation
 import AudioToolbox
+import CoreMotion
 
 class ViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
     private var revealPlayer: AVAudioPlayer!
     private var fartPlayer: AVAudioPlayer!
     private var oopsPlayer: AVAudioPlayer!
+    private var motionManager: CMMotionManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,27 @@ class ViewController: UIViewController {
         setupAudioPlayers()
         goodEggWorldView.rotatePlanetImage()
         startTimer()
+        setupMotionManager()
     }
     
+    private func setupMotionManager() {
+        motionManager = CMMotionManager()
+        motionManager.startDeviceMotionUpdates(to: .main) { (deviceMotion, error) in
+            guard let deviceMotion = deviceMotion else { return }
+            self.motionStarted(deviceMotion: deviceMotion)
+        }
+    }
+    
+    private func motionStarted(deviceMotion: CMDeviceMotion) {
+        let motionThreshold = 0.4
+        let userAcceleration = deviceMotion.userAcceleration
+        if fabs(userAcceleration.x) > motionThreshold
+            || fabs(userAcceleration.y) > motionThreshold
+            || fabs(userAcceleration.z) > motionThreshold {
+            motionBegan()
+        }
+    }
+
     private func setupAudioPlayers() {
         try? musicPlayer = AVAudioPlayer(contentsOf: Audio.shared.getURL(for: .music)!)
         try? shakePlayer = AVAudioPlayer(contentsOf: Audio.shared.getURL(for: .shake)!)
@@ -88,8 +109,8 @@ class ViewController: UIViewController {
         })
     }
     
-    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake, isShakeReady {
+    private func motionBegan() {
+        if isShakeReady {
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             isShakeReady = false
             shakeToSeeImageView.alpha = 0
